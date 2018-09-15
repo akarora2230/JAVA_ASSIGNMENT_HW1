@@ -59,17 +59,23 @@ public class Student_Grading
 		 while((s = rd.readLine()) != null)
 		 {
 			 count++;
-			String[] str=s.split("\\s+");          //This function splits the line read from the file according to one or more whitespace characters
+			 
+			//This function splits the line read from the file according to one or more whitespace characters
+			String[] str=s.split("\\s+");          
 			int asum=0;
 			String f=str[0]+"  ";
 			
 			
 			for(int i=1;i<str.length;i++)
 			{
-				if(Integer.parseInt(str[i])<10)    //parsing of string values to INTEGER
+				
+				//parsing of string values to INTEGER
+				if(Integer.parseInt(str[i])<10)    
 				f=f+"  "+str[i]+"  ";                
 				else f=f+str[i]+"  ";
-				if(i>=2&&i<12)                     //Array entries from 2 to 12 indicate marks, just add them to TOTAL marks. 
+				
+				//Array entries from 2 to 12 indicate marks, just add them to TOTAL marks. 
+				if(i>=2&&i<12)                     
 				{
 					if(str[i]!=null)               
 					asum=asum+Integer.parseInt(str[i]);
@@ -77,8 +83,8 @@ public class Student_Grading
 				if(i==11)
 				 {
 				
-				 
-					if(asum<100)                    //INDENTATION PURPOSE
+					  //INDENTATION PURPOSE
+					if(asum<100)                  
 						f=f+"  "+asum +"  ";
 				
 					f=f+asum+"  ";}
@@ -86,6 +92,7 @@ public class Student_Grading
 			
 			asum=asum+Integer.parseInt(str[1])+Integer.parseInt(str[12])+Integer.parseInt(str[13])+Integer.parseInt(str[14]);
 			f=f+asum+"   ";
+			
 			//asum=asum-Integer.parseInt(str[14]);
 			if(asum>maxpts)
 				maxpts=asum;
@@ -100,8 +107,6 @@ public class Student_Grading
 			f=f+"  "+grade;
 			out.write(f);
 			out.newLine();
-		
-			
 			
 			
 		 }
@@ -127,17 +132,20 @@ public class Student_Grading
 		 out.newLine();
 		 out.newLine();
 		 out.write("Maximum Pts  :   " + maxpts);
+		 
+		 
 		 //*****************************************//
-         out2.write("Average total point percent of all students :  " + (double)(average/count));
+         
+		 out2.write("Average total point percent of all students :  " + (double)(average/count));
 		 
 		 
 		 out2.newLine();
 		 out2.newLine();
-		 out2.write("No of A's  =    "+ grade_array[0]);
+		 out2.write("No of A's =    "+ grade_array[0]);
 		 out2.newLine();
 		 out2.write("No of B's =  "+ grade_array[1]);
 		 out2.newLine();
-		 out2.write("No of C's =  "+ grade_array[2]);
+		 out2.write("No of C's =  "+  grade_array[2]);
 		 out2.newLine();
 		 out2.write("No of D's =    "+ grade_array[3]);
 		 out2.newLine();
